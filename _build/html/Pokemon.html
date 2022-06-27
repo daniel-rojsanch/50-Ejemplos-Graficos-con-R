@@ -1,0 +1,369 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokemon &#8212; Ejemplos sobre Graficos en R</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Para los amantes de Futbol" href="Cap1.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Ejemplos sobre Graficos en R</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Introducción
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Cap1.html">
+   Para los amantes de Futbol
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Pokemon
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/Pokemon.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FPokemon.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Pokemon.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Pokemon</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="section" id="pokemon">
+<h1>Pokemon<a class="headerlink" href="#pokemon" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">### Funcion para que me muestre mi gracico con un</span>
+<span class="c1">### cierto largo y ancho</span>
+
+<span class="n">dim.plot</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">pkm</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;Data/pkm.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">head</span><span class="p">(</span><span class="n">pkm</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 6 × 14</caption>
+<thead>
+	<tr><th></th><th scope=col>X</th><th scope=col>X.</th><th scope=col>Name</th><th scope=col>Type.1</th><th scope=col>Type.2</th><th scope=col>Total</th><th scope=col>HP</th><th scope=col>Attack</th><th scope=col>Defense</th><th scope=col>Sp..Atk</th><th scope=col>Sp..Def</th><th scope=col>Speed</th><th scope=col>Generation</th><th scope=col>Legendary</th></tr>
+	<tr><th></th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;chr&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>1</th><td>1</td><td>1</td><td>Bulbasaur            </td><td>Grass</td><td>Poison</td><td>318</td><td>45</td><td> 49</td><td> 49</td><td> 65</td><td> 65</td><td>45</td><td>1</td><td>False</td></tr>
+	<tr><th scope=row>2</th><td>2</td><td>2</td><td>Ivysaur              </td><td>Grass</td><td>Poison</td><td>405</td><td>60</td><td> 62</td><td> 63</td><td> 80</td><td> 80</td><td>60</td><td>1</td><td>False</td></tr>
+	<tr><th scope=row>3</th><td>3</td><td>3</td><td>Venusaur             </td><td>Grass</td><td>Poison</td><td>525</td><td>80</td><td> 82</td><td> 83</td><td>100</td><td>100</td><td>80</td><td>1</td><td>False</td></tr>
+	<tr><th scope=row>4</th><td>4</td><td>3</td><td>VenusaurMega Venusaur</td><td>Grass</td><td>Poison</td><td>625</td><td>80</td><td>100</td><td>123</td><td>122</td><td>120</td><td>80</td><td>1</td><td>False</td></tr>
+	<tr><th scope=row>5</th><td>5</td><td>4</td><td>Charmander           </td><td>Fire </td><td>      </td><td>309</td><td>39</td><td> 52</td><td> 43</td><td> 60</td><td> 50</td><td>65</td><td>1</td><td>False</td></tr>
+	<tr><th scope=row>6</th><td>6</td><td>5</td><td>Charmeleon           </td><td>Fire </td><td>      </td><td>405</td><td>58</td><td> 64</td><td> 58</td><td> 80</td><td> 65</td><td>80</td><td>1</td><td>False</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">## svg(&quot;Img/poke2.svg&quot;, width = 7,height = 27)</span>
+
+<span class="nf">dim.plot</span><span class="p">(</span><span class="m">8</span><span class="p">,</span> <span class="m">27</span><span class="p">)</span>
+
+<span class="c1">## como son 6 estadisticas vamos a tomar 6 colores</span>
+
+<span class="n">my_col</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;#7B241C&quot;</span><span class="p">,</span>
+            <span class="s">&quot;#E67E22&quot;</span><span class="p">,</span>
+            <span class="s">&quot;#F4D03F&quot;</span><span class="p">,</span>
+            <span class="s">&quot;#229954&quot;</span><span class="p">,</span>
+            <span class="s">&quot;#3498DB&quot;</span><span class="p">,</span>
+            <span class="s">&quot;#212F3C&quot;</span><span class="p">)</span>
+
+<span class="nf">par</span><span class="p">(</span><span class="n">mar</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">13</span><span class="p">,</span> <span class="m">8</span><span class="p">,</span> <span class="m">3</span><span class="p">),</span> <span class="n">bg</span> <span class="o">=</span> <span class="s">&quot;#F8F9F9&quot;</span><span class="p">)</span>
+<span class="n">pkm2</span> <span class="o">&lt;-</span> <span class="n">pkm</span><span class="p">[</span> <span class="n">pkm</span><span class="o">$</span><span class="n">Generation</span> <span class="o">==</span> <span class="m">2</span><span class="p">,</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Name&quot;</span><span class="p">,</span><span class="s">&quot;Total&quot;</span><span class="p">,</span> <span class="s">&quot;HP&quot;</span><span class="p">,</span><span class="s">&quot;Attack&quot;</span><span class="p">,</span> <span class="s">&quot;Defense&quot;</span><span class="p">,</span> <span class="s">&quot;Sp..Atk&quot;</span><span class="p">,</span><span class="s">&quot;Sp..Def&quot;</span><span class="p">,</span><span class="s">&quot;Speed&quot;</span><span class="p">)</span> <span class="p">]</span>
+<span class="n">pkm2</span> <span class="o">&lt;-</span> <span class="n">pkm2</span><span class="p">[</span><span class="nf">order</span><span class="p">(</span><span class="n">pkm2</span><span class="o">$</span><span class="n">Total</span><span class="p">),]</span>
+
+<span class="nf">barplot</span><span class="p">(</span><span class="n">pkm2</span><span class="o">$</span><span class="n">Total</span><span class="p">,</span> <span class="n">horiz</span> <span class="o">=</span> <span class="bp">T</span><span class="p">,</span> <span class="n">names.arg</span> <span class="o">=</span> <span class="n">pkm2</span><span class="o">$</span><span class="n">Name</span><span class="p">,</span>
+        <span class="n">axes</span> <span class="o">=</span> <span class="bp">T</span><span class="p">,</span> <span class="n">space</span> <span class="o">=</span> <span class="m">1.5</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="n">my_col</span><span class="p">[</span><span class="m">1</span><span class="p">],</span> <span class="n">cex.names</span> <span class="o">=</span> <span class="m">0.9</span><span class="p">,</span> <span class="n">las</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">main</span> <span class="o">=</span> <span class="s">&quot;Total de Atributos Pokemon \n Segunda Generación&quot;</span><span class="p">,</span> 
+        <span class="n">font.main</span> <span class="o">=</span> <span class="m">15</span><span class="p">,</span> <span class="n">cex.main</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">col.main</span> <span class="o">=</span> <span class="s">&quot;#A93226&quot;</span><span class="p">)</span>
+
+
+<span class="nf">for </span><span class="p">(</span> <span class="n">i</span> <span class="n">in</span> <span class="m">3</span><span class="o">:</span><span class="m">7</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">barplot</span><span class="p">(</span> <span class="nf">apply</span><span class="p">(</span> <span class="n">pkm2</span><span class="p">[,</span><span class="n">i</span><span class="o">:</span><span class="m">8</span><span class="p">],</span> <span class="m">1</span><span class="p">,</span> <span class="n">sum</span> <span class="p">),</span> <span class="n">horiz</span> <span class="o">=</span> <span class="bp">T</span><span class="p">,</span> <span class="n">add</span> <span class="o">=</span> <span class="bp">T</span><span class="p">,</span> <span class="n">space</span> <span class="o">=</span> <span class="m">1.5</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="n">my_col</span><span class="p">[</span><span class="n">i</span><span class="m">-2</span><span class="p">],</span> <span class="n">names.arg</span> <span class="o">=</span> <span class="bp">F</span> <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nf">barplot</span><span class="p">(</span> <span class="n">pkm2</span><span class="o">$</span><span class="n">Speed</span><span class="p">,</span> <span class="n">horiz</span> <span class="o">=</span> <span class="bp">T</span><span class="p">,</span> <span class="n">add</span> <span class="o">=</span> <span class="bp">T</span><span class="p">,</span> <span class="n">space</span> <span class="o">=</span> <span class="m">1.5</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="n">my_col</span><span class="p">[</span><span class="m">6</span><span class="p">],</span> <span class="n">names.arg</span> <span class="o">=</span> <span class="bp">F</span> <span class="p">)</span>
+
+<span class="nf">text</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">55</span><span class="p">,</span> <span class="m">175</span><span class="p">,</span> <span class="m">308</span><span class="p">,</span> <span class="m">435</span><span class="p">,</span> <span class="m">560</span><span class="p">,</span> <span class="m">660</span><span class="p">),</span> <span class="nf">rep</span><span class="p">(</span><span class="m">270</span><span class="p">,</span> <span class="m">6</span><span class="p">),</span> <span class="nf">rev</span><span class="p">(</span><span class="nf">colnames</span><span class="p">(</span><span class="n">pkm2</span><span class="p">[,</span><span class="m">3</span><span class="o">:</span><span class="m">8</span><span class="p">])),</span> <span class="n">cex</span> <span class="o">=</span> <span class="m">0.8</span><span class="p">)</span>
+<span class="nf">points</span><span class="p">(</span> <span class="nf">c</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="m">122</span><span class="p">,</span> <span class="m">253</span><span class="p">,</span> <span class="m">375</span><span class="p">,</span> <span class="m">510</span><span class="p">,</span> <span class="m">630</span><span class="p">),</span> <span class="nf">rep</span><span class="p">(</span><span class="m">270</span><span class="p">,</span><span class="m">6</span><span class="p">),</span> <span class="n">cex</span> <span class="o">=</span> <span class="m">1.8</span><span class="p">,</span> <span class="n">pch</span> <span class="o">=</span> <span class="m">15</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="nf">rev</span><span class="p">(</span><span class="n">my_col</span><span class="p">),</span> <span class="n">xpd</span><span class="o">=</span><span class="bp">T</span><span class="p">)</span>
+
+<span class="nf">grid</span><span class="p">()</span>
+
+<span class="c1"># dev.off()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Pokemon_4_0.png" src="_images/Pokemon_4_0.png" />
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Cap1.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Para los amantes de Futbol</p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Daniel Rojas Sánchez<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
