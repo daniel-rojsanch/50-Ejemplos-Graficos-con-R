@@ -6,3 +6,5 @@ root: intro
 chapters:
 - file: FIFA
 - file: Pokemon
+- file: Capitulos/Parte1
+- file: Capitulos/Parte2
