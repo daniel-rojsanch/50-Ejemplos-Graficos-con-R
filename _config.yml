@@ -3,7 +3,7 @@
 
 title: 🎩 Ejemplos de Graficos con R
 author: Daniel Rojas Sánchez
-logo: logo.png
+logo: Img/logo.png
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
