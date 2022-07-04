@@ -1,0 +1,484 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🍞 Pie Chart &#8212; 🎩 Ejemplos de Graficos con R</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Animaciones Parte 2" href="Parte3.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">🎩 Ejemplos de Graficos con R</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    🌏 Bienvenidos!!
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="FIFA.html">
+   ⚽ Para los amantes de Futbol
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Pokemon.html">
+   🐶 Pokemon
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Parte1.html">
+   🍁 Variables Categoricas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Parte2.html">
+   🔭 Animaciones
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Parte3.html">
+   Animaciones Parte 2
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   🍞 Pie Chart
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/daniel-rojsanch/50-Ejemplos-Graficos-con-R/master?urlpath=tree/docs/PieChart.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/daniel-rojsanch/50-Ejemplos-Graficos-con-R"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/daniel-rojsanch/50-Ejemplos-Graficos-con-R/issues/new?title=Issue%20on%20page%20%2FPieChart.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/PieChart.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>🍞 Pie Chart</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="pie-chart">
+<h1>🍞 Pie Chart<a class="headerlink" href="#pie-chart" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">RColorBrewer</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">source</span><span class="p">(</span><span class="s">&quot;help.r&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vamos a <strong>inventar</strong> a algunos datos que signifiquen la felicidad de las personas</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">felicidad</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">22</span><span class="p">,</span> <span class="m">23</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">29</span><span class="p">,</span> <span class="m">19</span><span class="p">,</span><span class="m">2</span><span class="p">)</span>
+<span class="nf">names</span><span class="p">(</span><span class="n">felicidad</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Dinero&quot;</span><span class="p">,</span><span class="s">&quot;Amor de Pareja&quot;</span><span class="p">,</span><span class="s">&quot;Vacaciones&quot;</span><span class="p">,</span><span class="s">&quot;Comida&quot;</span><span class="p">,</span><span class="s">&quot;Futbol&quot;</span><span class="p">,</span><span class="s">&quot;Otros&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">dim.plot</span><span class="p">(</span><span class="m">8</span><span class="p">,</span> <span class="m">8</span><span class="p">)</span>
+<span class="nf">pie</span><span class="p">(</span><span class="n">felicidad</span><span class="p">,</span> <span class="n">cex</span> <span class="o">=</span> <span class="m">1.3</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="nf">brewer.pal</span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">felicidad</span><span class="p">)</span> <span class="p">,</span> <span class="s">&quot;Blues&quot;</span><span class="p">),</span> <span class="n">radius</span> <span class="o">=</span> <span class="m">0.7</span><span class="p">,</span> 
+    <span class="n">border</span> <span class="o">=</span> <span class="s">&quot;#ffffff&quot;</span><span class="p">,</span> <span class="n">density</span> <span class="o">=</span> <span class="m">100</span><span class="p">,</span> <span class="n">main</span> <span class="o">=</span> <span class="s">&quot;Factores principales de la Felicidad&quot;</span><span class="p">,</span> <span class="n">cex.main</span> <span class="o">=</span> <span class="m">1.6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/PieChart_5_0.png" src="_images/PieChart_5_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">dim.plot</span><span class="p">(</span><span class="m">17</span><span class="p">,</span> <span class="m">8</span><span class="p">)</span>
+<span class="nf">par</span><span class="p">(</span><span class="n">mfrow</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">3</span><span class="p">))</span>
+
+<span class="n">comida</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span> <span class="m">10</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="m">20</span><span class="p">,</span> <span class="m">30</span><span class="p">,</span> <span class="m">15</span><span class="p">,</span> <span class="m">15</span> <span class="p">)</span>
+<span class="nf">names</span><span class="p">(</span><span class="n">comida</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Mole&quot;</span><span class="p">,</span><span class="s">&quot;Barbacoa&quot;</span><span class="p">,</span><span class="s">&quot;Gorditas&quot;</span><span class="p">,</span><span class="s">&quot;Carnitas&quot;</span><span class="p">,</span><span class="s">&quot;Huaraches&quot;</span><span class="p">,</span><span class="s">&quot;Tortas&quot;</span><span class="p">)</span>
+
+<span class="n">Mole</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">60</span><span class="p">,</span><span class="m">50</span><span class="p">)</span>
+<span class="nf">names</span><span class="p">(</span><span class="n">Mole</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Rojo&quot;</span><span class="p">,</span><span class="s">&quot;Verde&quot;</span><span class="p">)</span>
+
+<span class="n">Carnitas</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">95</span><span class="p">,</span> <span class="m">5</span><span class="p">)</span>
+<span class="nf">names</span><span class="p">(</span><span class="n">Carnitas</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;si&quot;</span><span class="p">,</span><span class="s">&quot;No&quot;</span><span class="p">)</span>
+
+
+<span class="nf">pie</span><span class="p">(</span><span class="n">comida</span><span class="p">,</span> <span class="n">radius</span> <span class="o">=</span> <span class="m">2.4</span><span class="p">,</span> <span class="n">cex</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="nf">brewer.pal</span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">comida</span><span class="p">)</span> <span class="p">,</span> <span class="s">&quot;Reds&quot;</span><span class="p">),</span> <span class="n">density</span> <span class="o">=</span> <span class="m">150</span><span class="p">)</span>
+<span class="nf">mtext</span><span class="p">(</span><span class="s">&quot;Top 6 Comidas Favotitas \n de los Mexicanos&quot;</span><span class="p">,</span> <span class="n">side</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">cex</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">line</span> <span class="o">=</span> <span class="m">-2</span><span class="p">)</span>
+<span class="nf">mtext</span><span class="p">(</span><span class="s">&quot;Preferencias de la Comida Méxicana&quot;</span><span class="p">,</span> <span class="n">side</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">adj</span> <span class="o">=</span> <span class="m">-1.8</span><span class="p">,</span> <span class="n">outer</span> <span class="o">=</span> <span class="bp">F</span><span class="p">,</span> <span class="n">cex</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">line</span> <span class="o">=</span> <span class="m">-4</span><span class="p">)</span>
+
+
+<span class="nf">pie</span><span class="p">(</span><span class="n">Mole</span><span class="p">,</span> <span class="n">radius</span> <span class="o">=</span> <span class="m">2.4</span><span class="p">,</span> <span class="n">cex</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;#EF5350&quot;</span><span class="p">,</span> <span class="s">&quot;#4DB6AC&quot;</span> <span class="p">),</span> <span class="n">angle</span> <span class="o">=</span> <span class="m">-45</span><span class="p">,</span> <span class="n">border</span> <span class="o">=</span> <span class="s">&quot;white&quot;</span><span class="p">)</span>
+<span class="nf">mtext</span><span class="p">(</span><span class="s">&quot;¿Que tipo de Mole prefieres?&quot;</span><span class="p">,</span> <span class="n">side</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">cex</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">line</span> <span class="o">=</span> <span class="m">-4</span><span class="p">)</span>
+
+
+<span class="nf">pie</span><span class="p">(</span><span class="n">Carnitas</span><span class="p">,</span> <span class="n">radius</span> <span class="o">=</span> <span class="m">2.4</span><span class="p">,</span> <span class="n">cex</span> <span class="o">=</span> <span class="m">2</span> <span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;#9FA8DA&quot;</span><span class="p">,</span><span class="s">&quot;#C5CAE9&quot;</span><span class="p">),</span> <span class="n">density</span> <span class="o">=</span> <span class="m">150</span><span class="p">)</span>
+<span class="nf">mtext</span><span class="p">(</span><span class="s">&quot;¿Las Carnitas van con Refresco?&quot;</span><span class="p">,</span> <span class="n">side</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">cex</span> <span class="o">=</span> <span class="m">2</span><span class="p">,</span> <span class="n">line</span> <span class="o">=</span> <span class="m">-4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/PieChart_6_0.png" src="_images/PieChart_6_0.png" />
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Parte3.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Animaciones Parte 2</p>
+        </div>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Daniel Rojas Sánchez<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
